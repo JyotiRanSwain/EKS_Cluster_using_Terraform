@@ -1,5 +1,5 @@
 resource "aws_instance" "kubectl-server" {
-  ami                         = "ami-063e1495af50e6fd5"
+  ami                         = "ami-07c2a88388bb80eb0"
   key_name                    = "ubuntusingapore"
   instance_type               = "t2.micro"
   associate_public_ip_address = true
@@ -22,7 +22,7 @@ resource "aws_eks_node_group" "node-grp" {
   instance_types  = ["t2.small"]
 
   remote_access {
-    ec2_ssh_key               = "ubuntusingapore"
+    ec2_ssh_key               = "shankar-key"
     source_security_group_ids = [aws_security_group.allow_tls.id]
   }
 
